@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>React Page</title>
+        <meta charset="utf-8">
+        <script src="https://unpkg.com/react@15/dist/react.min.js"> </script>
+		<script src="https://unpkg.com/react-dom@15/dist/react-dom.min.js"></script>
+		<script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+    </head>
+    <body>
+        <div id="root"></div>
+        <script type="text/babel">
+
+           
+            const animals = [
+                'dog',
+                'cat',
+                'parrot',
+                'mouse'
+            ]
+            var num = 0;
+            let i = 0;
+            class Hello extends React.Component {
+                
+                constructor() {
+                 
+                    super();
+                    this.state = {
+                        age:26, 
+                        label:"Some animal",
+                        bulin: false,                       
+                        num: 0
+                        
+                    }
+                    this.changeText = this.changeText.bind(this);
+                }
+                
+                changeText() {
+
+                  
+                        this.setState({label:animals[i],num:i+1});
+                        i++;
+                        if (i == animals.length) {i = 0}
+                        console.log(i);
+                  
+
+                }
+                    
+                
+
+                render() {
+                    return (
+                        <div>
+                        <h1>Hello, world! {this.props.txt}</h1>
+                        <h2>My name is {this.props.name}</h2>
+                        <h2>I am {this.state.age} old</h2>
+                        <h1>{this.state.label}  {this.state.num}</h1>
+                        
+                        
+                        
+                        <button onClick={this.changeText}>Press</button>
+                        </div>
+                    )
+
+                }
+            }
+            
+            ReactDOM.render(
+                <Hello txt="Bastards!" name="Mark" />,
+                document.getElementById("root")
+            )
+
+        </script>
+        
+    </body>
+</html>
