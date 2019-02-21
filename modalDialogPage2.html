@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            ModalDialogPage2
+        </title>
+        <meta charset="utf-8">
+        <style>
+            button {
+                width:70px;
+                height: 20px;
+                margin:20px;
+                background: blue;
+                color: white;
+
+            }
+            h3 {
+                background: blue;
+                /*border-radius: 100px; */
+                color: white;
+                /*border: '1px solid red'*/
+            }
+            #window {
+                padding: 0px;
+                border: 1px solid blue;/*#4CAF50;*/
+            }
+            #mainButton {
+                background: grey;
+            }
+        </style>
+        <script src="https://unpkg.com/react@15/dist/react.min.js"> </script>
+		<script src="https://unpkg.com/react-dom@15/dist/react-dom.min.js"></script>
+		<script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+    </head>
+    <body>
+        <div id="root"></div>
+        <script type="text/babel">
+
+        class App extends React.Component {
+            
+            render() {
+                const css = {
+                        
+                            padding: "10px"
+                        
+                }
+                return (
+                    <div id="window">
+                   
+                    <header>
+                        <h3>Добавление наблюдателей</h3>
+                        
+                    </header>
+                   
+                    <article>
+                        
+                        <div>
+                        <span>Наблюдатели</span>
+                        <span style={css}>
+                        <input type="text"/>
+                        <button>search</button>
+                        </span>
+                        <span style={css}>
+                        <input type="text"/>
+                        <button>save</button>
+                        </span>
+                        </div>
+                        <p></p>
+                        <div>
+                            <input type="checkbox"/>
+                            Запретить добавление наблюдателей
+                        </div>
+                    </article>
+                   
+                    <footer>
+                        {/*<p></p>*/}
+                        <button id="mainButton">Добавить</button>
+                        <button>Отмена</button>
+                    </footer>
+                   
+                    </div>
+                )
+            }
+        }
+
+        ReactDOM.render(
+            <App/>,
+            document.getElementById("root")
+        )
+        </script>
+    </body>
+</html>
