@@ -37,13 +37,19 @@
         <script type="text/babel">
 
         class App extends React.Component {
+            constructor() {
+                super();
+                this.state = {
+                    selectValue:"Hui"
+                }
+            }
+            changeSelect(event) {
+                this.
+                setState({selectValue:event.target.value})
+            }
             
             render() {
-                const css = {
-                        
-                            padding: "10px"
-                        
-                }
+                const css = {padding: "10px"}
                 return (
                     <div id="window">
                    
@@ -57,11 +63,26 @@
                         <div>
                         <span>Наблюдатели</span>
                         <span style={css}>
-                        <input type="text"/>
+                        <select value={this.state.selectValue} onChange={this.changeSelect.bind(this)}>
+                            <option>Синицын Cергей</option>
+`                           <option>Айгерим Ерасилова</option>
+                            <option>Олжас Болатбеков</option>
+                            <option>Рахманова Камила</option>
+                            <option>Дидар Акимбаев</option>
+                            <option>Наталья Попова</option>
+                        </select>
                         <button>search</button>
                         </span>
                         <span style={css}>
-                        <input type="text"/>
+                        <select>
+                            <option>'          '</option>
+                            <option>'          '</option>
+                            <option>'          '</option>
+                            <option>'          '</option>
+                            <option>'          '</option>
+                            <option>'          '</option>
+                            <option>'          '</option>
+                        </select>
                         <button>save</button>
                         </span>
                         </div>
